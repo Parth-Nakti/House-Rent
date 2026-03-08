@@ -1,67 +1,150 @@
 @import "./variables.scss";
 @import "./breakpoints.scss";
 
+// Previous footer styles (kept for reference)
+// .footer {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   gap: 50px;
+//   padding: 10px 70px;
+//
+//   @include lg {
+//     padding: 10px 30px;
+//   }
+//
+//   &_left {
+//     max-width: 400px;
+//
+//     img {
+//       max-width: 150px;
+//       margin-bottom: 20px;
+//     }
+//
+//     &_socials {
+//       display: flex;
+//       gap: 25px;
+//       margin-top: 20px;
+//
+//       &_icon {
+//         width: 40px;
+//         height: 40px;
+//         border-radius: 50%;
+//         background-color: $pinkred;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         cursor: pointer;
+//         transition: all 0.5s ease-in-out;
+//
+//         &:hover {
+//           transform: scale(1.2);
+//         }
+//       }
+//     }
+//   }
+//
+//   &_center {
+//     text-decoration: none;
+//
+//     ul {
+//       list-style: none;
+//       margin-top: 20px;
+//       cursor: pointer;
+//
+//       li:hover {
+//         color: $pinkred
+//       }
+//
+//       a {
+//         text-decoration: none;
+//         color: black;
+//
+//         &:hover {
+//           color: $pinkred;
+//         }
+//       }
+//     }
+//
+//     @include md {
+//       display: none;
+//     }
+//   }
+//
+//   &_right {
+//     max-width: 350px;
+//
+//     h3 {
+//       margin-bottom: 20px;
+//     }
+//
+//     &_info {
+//       display: flex;
+//
+//       p {
+//         margin-left: 20px;
+//         margin-bottom: 15px;
+//       }
+//     }
+//
+//     @include sm {
+//       display: none;
+//     }
+//   }
+// }
+
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 50px;
-  padding: 10px 70px;
+  padding: 24px 70px 32px;
+  border-top: 1px solid $lightgrey;
+  background-color: #ffffff;
 
   @include lg {
-    padding: 10px 30px;
+    padding: 20px 30px 28px;
+  }
+
+  @include sm {
+    flex-direction: column;
+    gap: 24px;
   }
 
   &_left {
-    max-width: 400px;
+    max-width: 360px;
 
     img {
       max-width: 150px;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
-    &_socials {
-      display: flex;
-      gap: 25px;
-      margin-top: 20px;
-
-      &_icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: $pinkred;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
-
-        &:hover {
-          transform: scale(1.2);
-        }
-      }
+    .footer_tagline {
+      font-size: 14px;
+      color: $darkgrey;
     }
   }
 
   &_center {
     text-decoration: none;
 
+    h3 {
+      margin-bottom: 10px;
+    }
+
     ul {
       list-style: none;
-      margin-top: 20px;
+      margin-top: 8px;
       cursor: pointer;
+      padding-left: 0;
 
-      li:hover {
-        color: $pinkred
+      li {
+        font-size: 14px;
+        margin-bottom: 6px;
       }
 
-      a {
-        text-decoration: none;
-        color: black;
-
-        &:hover {
-          color: $pinkred;
-        }
+      li:hover {
+        color: $pinkred;
       }
     }
 
@@ -71,23 +154,39 @@
   }
 
   &_right {
-    max-width: 350px;
+    max-width: 320px;
 
     h3 {
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     &_info {
       display: flex;
+      align-items: center;
 
       p {
-        margin-left: 20px;
-        margin-bottom: 15px;
+        margin-left: 12px;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+    }
+
+    &_note {
+      margin-top: 10px;
+
+      p {
+        font-size: 13px;
+        margin-bottom: 6px;
+        color: $darkgrey;
+      }
+
+      img {
+        max-width: 160px;
       }
     }
 
     @include sm {
-      display: none;
+      max-width: 100%;
     }
   }
 }

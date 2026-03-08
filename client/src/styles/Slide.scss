@@ -1,16 +1,75 @@
+// Previous hero styles (kept for reference)
+// .slide {
+//   width: 100vw;
+//   height: 80vh;
+//   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+//     url("../../public/assets/slide.png");
+//   background-position: center top;
+//   background-size: cover;
+//
+//   h1 {
+//     padding: 40px 20px;
+//     font-size: 40px;
+//     text-align: center;
+//     color: white;
+//   }
+// }
+
 .slide {
+  position: relative;
   width: 100vw;
   height: 80vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../public/assets/slide.png");
-  background-position: center top;
-  background-size: cover;
-
-  h1 {
-    padding: 40px 20px;
-    font-size: 40px;
-    text-align: center;
-    color: white;
-  }
+  background: url("../../public/assets/slide.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  color: #fff;
+  overflow: hidden;
 }
 
+.slide_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.35)
+  );
+}
+
+.slide_content {
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  z-index: 1;
+}
+
+.slide_kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 12px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.slide_title {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.slide_subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+  max-width: 550px;
+  margin: 0 auto 20px;
+}
+
+.slide_highlights {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+}

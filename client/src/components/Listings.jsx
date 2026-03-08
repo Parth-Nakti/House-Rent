@@ -37,8 +37,60 @@ const Listings = () => {
     getFeedListings();
   }, [selectedCategory]);
 
+  // Previous listings UI (kept for reference)
+  // return (
+  //   <>
+  //     <div className="category-list">
+  //       {categories?.map((category, index) => (
+  //         <div
+  //           className={`category ${category.label === selectedCategory ? "selected" : ""}`}
+  //           key={index}
+  //           onClick={() => setSelectedCategory(category.label)}
+  //         >
+  //           <div className="category_icon">{category.icon}</div>
+  //           <p>{category.label}</p>
+  //         </div>
+  //       ))}
+  //     </div>
+  //
+  //     {loading ? (
+  //       <Loader />
+  //     ) : (
+  //       <div className="listings">
+  //         {listings.map(
+  //           ({
+  //             _id,
+  //             creator,
+  //             listingPhotoPaths,
+  //             city,
+  //             province,
+  //             country,
+  //             category,
+  //             type,
+  //             price,
+  //             booking=false
+  //           }) => (
+  //             <ListingCard
+  //               listingId={_id}
+  //               creator={creator}
+  //               listingPhotoPaths={listingPhotoPaths}
+  //               city={city}
+  //               province={province}
+  //               country={country}
+  //               category={category}
+  //               type={type}
+  //               price={price}
+  //               booking={booking}
+  //             />
+  //           )
+  //         )}
+  //       </div>
+  //     )}
+  //   </>
+  // );
+
   return (
-    <>
+    <section className="listings-section">
       <div className="category-list">
         {categories?.map((category, index) => (
           <div
@@ -53,7 +105,9 @@ const Listings = () => {
       </div>
 
       {loading ? (
-        <Loader />
+        <div className="listings_loader">
+          <Loader />
+        </div>
       ) : (
         <div className="listings">
           {listings.map(
@@ -67,9 +121,13 @@ const Listings = () => {
               category,
               type,
               price,
-              booking=false
+              booking = false,
+              startDate,
+              endDate,
+              totalPrice,
             }) => (
               <ListingCard
+                key={_id}
                 listingId={_id}
                 creator={creator}
                 listingPhotoPaths={listingPhotoPaths}
@@ -80,12 +138,15 @@ const Listings = () => {
                 type={type}
                 price={price}
                 booking={booking}
+                startDate={startDate}
+                endDate={endDate}
+                totalPrice={totalPrice}
               />
             )
           )}
         </div>
       )}
-    </>
+    </section>
   );
 };
 
